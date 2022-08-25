@@ -1,0 +1,35 @@
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+
+ul,
+menu{
+    list-style: none;
+}
+
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.todo{
+    font-weight: bold;
+    padding:8px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+ display: inline-block;
+ line-height: 25px;
+ border-radius: 5px;
+}
+
+.done{
+    text-decoration: line-through;
+}
