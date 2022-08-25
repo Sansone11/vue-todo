@@ -19,11 +19,11 @@ const todos = [{
 },
 {
     text:'fare la spesa',
-    done:false,
+    done:true,
 },
 {
     text:'portare fuori il cane',
-    done:true,
+    done:false,
 },
 {
     text:'fare la lavatrice',
@@ -38,5 +38,24 @@ const root = new Vue({
         // porto l'array dentro i data
         todos:todos,
         classeTodos: 'todo',
+        newTodo :'',
+    },
+    methods: {
+        toggleDoneOf(todo){
+            todo.done = !todo.done
+        },
+        addTodo() {
+            this.newTodo = this.newTodo.trim()
+
+            if (!this.newTodo) return
+            this.todos.push({
+                text: this.newTodo,
+                done: false
+            })
+        }
     }
 })
+
+const done = false
+
+const task = [done ? 'done' : '', 'todo',]

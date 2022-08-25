@@ -12,18 +12,18 @@
 <body>
     <main id="root">
         <div class="container">
-           <input type="text">
-           <input type="button"value="aggiungi"> </button>
+           <input type="text" v-model="newTodo" placeholder="inserisci nuova task">
+           <input @click="addTodo" type="button"value="aggiungi"> </button>
         </div>
 
         <div class="container__list">
             <ul class="todolist">
                 <!-- ciclo per ogni indice todo -->
                 <li v-for="(todo,index) in todos" 
-                :class="todo.done ? 'done' : ''"
+                :class="[todo.done ? 'done' : '',classeTodos]"
                 class="todo">
                 {{todo.text}}
-                <i class="fa-solid fa-check"></i>
+                <i @click="toggleDoneOf(todo)" class="fa-solid fa-check"></i>
                 </li>
             </ul>
 
